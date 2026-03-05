@@ -16,46 +16,36 @@ public class Spawner : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer < 0) {
-            rng = Random.Range(0, 2);
-            if (rng == 0) {
-                rng = Random.Range(0, 2);
-                negativeY = rng;
-                if (rng == 0)
-                {
-                    negativeY = -1.0f;
-                }
-                Vector3 location1 = new Vector3(Random.Range(-screenLimitX - 3.0f, screenLimitX + 3.0f), Random.Range(screenLimitY, screenLimitY + 3.0f) * negativeY, 0);
-                GameObject newEnemy = Instantiate(enemies, location1, Quaternion.identity);
-                spawnTimer = 1.0f;
-            }
-            else {
-                rng = Random.Range(0, 2);
-                negativeX = rng;
-                if (rng == 0)
-                {
-                    negativeX = -1.0f;
-                }
-                Vector3 location1 = new Vector3(Random.Range(screenLimitX, screenLimitX + 3.0f) * negativeX, Random.Range(-screenLimitY - 3.0f, screenLimitY + 3.0f), 0);
-                GameObject newEnemy = Instantiate(enemies, location1, Quaternion.identity);
-                spawnTimer = 1.0f;
-            }
-            //rng = Random.Range(0, 2);
-            //negativeX = rng;
-            //if (rng == 0) {
-            //    negativeX = -1.0f;
-            //}
-            //rng = Random.Range(0, 2);
-            //negativeY = rng;
-            //if (rng == 0)
-            //{
-            //    negativeY = -1.0f;
-            //}
-            //Vector3 location1 = new Vector3(Random.Range(screenLimitX, screenLimitX + 3.0f) * negativeX, Random.Range(screenLimitY, screenLimitY + 3.0f) * negativeY, 0);
-            //GameObject newEnemy = Instantiate(enemies, location1, Quaternion.identity);
-            //spawnTimer = 1.0f;
-        }
+        //if (spawnTimer < 0)
+        //{
+        //    rng = Random.Range(0, 2);
+        //    if (rng == 0)
+        //    {
+        //        rng = Random.Range(0, 2);
+        //        negativeY = rng;
+        //        if (rng == 0)
+        //        {
+        //            negativeY = -1.0f;
+        //        }
+        //        Vector3 location1 = new Vector3(Random.Range(-screenLimitX - 3.0f, screenLimitX + 3.0f), Random.Range(screenLimitY, screenLimitY + 3.0f) * negativeY, 0);
+        //        GameObject newEnemy = Instantiate(enemies, location1, Quaternion.identity);
+        //        spawnTimer = 1.0f;
+        //    }
+        //    else
+        //    {
+        //        rng = Random.Range(0, 2);
+        //        negativeX = rng;
+        //        if (rng == 0)
+        //        {
+        //            negativeX = -1.0f;
+        //        }
+        //        Vector3 location1 = new Vector3(Random.Range(screenLimitX, screenLimitX + 3.0f) * negativeX, Random.Range(-screenLimitY - 3.0f, screenLimitY + 3.0f), 0);
+        //        GameObject newEnemy = Instantiate(enemies, location1, Quaternion.identity);
+        //        spawnTimer = 1.0f;
+        //    }
+        //}
     }
 }

@@ -15,6 +15,10 @@ public class Enemies : MonoBehaviour {
         screenLimitX = screenSize.x + 4.0f;
         screenLimitY = screenSize.y + 4.0f;
         targetPlayer = GameObject.FindObjectOfType(typeof(Player)) as Player;
+        // targetPlayer = (Player)FindFirstObjectByType(typeof(Player));
+        // if (targetPlayer == null) {
+        // gamestate = waiting;
+        // }
         Vector2 offset = new Vector2(transform.position.x - targetPlayer.transform.position.x, transform.position.y - targetPlayer.transform.position.y);
         this.transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg);
         endPoint = this.transform.position - (this.transform.right * 50.0f);

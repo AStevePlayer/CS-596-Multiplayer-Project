@@ -2,19 +2,27 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour {
     Rigidbody2D hurtbox;
     float horizontalMovement;
     float verticalMovement;
     public Vector3 knockback;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() {
+
+    public override void OnNetworkSpawn() {
         hurtbox = GetComponent<Rigidbody2D>();
     }
 
+    //void Start() {
+    //    hurtbox = GetComponent<Rigidbody2D>();
+    //}
+
     // Update is called once per frame
     void FixedUpdate() {
+        if (!IsOwner) {
+            return;
+        }
         if (Keyboard.current.leftArrowKey.isPressed) {
             horizontalMovement = -3.0f;
         }
