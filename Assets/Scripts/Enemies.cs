@@ -21,9 +21,9 @@ public class Enemies : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        //this.transform.position += -transform.right * targetSpeed;
-        //if (Mathf.Abs(this.transform.position.x) > screenLimitX || Mathf.Abs(this.transform.position.y) > screenLimitY) {
-        //    Destroy(gameObject);
-        //}
+        this.transform.position += -transform.right * targetSpeed;
+        if (Mathf.Abs(this.transform.position.x) > screenLimitX || Mathf.Abs(this.transform.position.y) > screenLimitY) {
+            Destroy(gameObject);
+        }
     }
 }
