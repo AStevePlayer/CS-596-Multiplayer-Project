@@ -2,7 +2,7 @@ using UnityEngine;
 using Unity.Netcode.Components;
 
 public class ClientNetworkTransform : NetworkTransform {
-    protected override bool OnIsServerAuthoritative() {
+    protected override bool OnIsServerAuthoritative() { // Got this from documentation
         return false;
     }
 }

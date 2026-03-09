@@ -12,11 +12,11 @@ public class ConnectUIScript : MonoBehaviour {
         clientButton.onClick.AddListener(ClientButtonOnClick);
     }
 
-    private void HostButtonOnClick() {
+    private void HostButtonOnClick() { // If host button is clicked, try to host game
         NetworkManager.Singleton.StartHost();
     }
 
-    private void ClientButtonOnClick() {
+    private void ClientButtonOnClick() { // If client button is clicked, try to join game
         NetworkManager.Singleton.StartClient();
     }
 }
